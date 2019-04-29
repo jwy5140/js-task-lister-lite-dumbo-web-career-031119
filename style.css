@@ -1,20 +1,15 @@
-html {
-  height: 100%;
-  width: 100%;
-  font-family: "Titillium Web", sans-serif;
-}
-
 body {
-  min-height: 100%;
-  min-width: 100%;
-  background: linear-gradient(pink, violet);
+  background: linear-gradient(#00838f, #439889);
 }
 
-button {
-  font-size: 7px;
+#submit {
+  font-size: 14px;
 }
 
-#main-content {
+#title {
+  font-size: larger;
+  max-height: 100%;
+  max-width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -27,11 +22,141 @@ button {
   box-shadow: 2px 5px 5px #333;
 }
 
-#list {
-  margin: 10px;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 15px 20px 18px 18px;
+.selection {
+  height: 25%;
+  width: 25%;
+  margin-top: 20px;
+  font-weight: bold;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 18px 20px 18px 20px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
 }
+
+.openSelection {
+  height: 25%;
+  width: 25%;
+  margin-top: 20px;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  float:left;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 18px 20px 18px 20px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px #333;
+}
+
+#descriptionsList{
+  list-style: none;
+}
+
+#descriptionsList li:first-child{
+  margin-top: 0px;
+}
+
+#taskList{
+  text-align: center;
+}
+
+.mainlist {
+  height: 50px;
+  width: 225px;
+  background-color: rgb(41, 215, 238);
+  border-radius: 14px;
+  color: white;
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-left: -22px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.mainlist span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.mainlist span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.mainlist:hover span {
+  padding-right: 25px;
+}
+
+.mainlist:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.gui {
+  min-height: 70%;
+  min-width: 70%;
+  position: relative;
+  background-color: rgb(41, 215, 238);
+  float: right;
+  margin-top: 20px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 18px 20px 18px 20px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px #333;
+}
+
+.hidden {
+  display: none;
+}
+
+.clearfix:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/* #selection {
+  max-height: 25%;
+  max-width: 25%;
+  margin-top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 18px 20px 18px 18px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px #333;
+} */
