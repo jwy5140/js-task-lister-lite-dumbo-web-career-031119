@@ -5,6 +5,7 @@ let taskForm = document.getElementById("create-task-form");
 let descriptionsList = document.getElementById("descriptionsList");
 let taskDashboard = document.getElementById("dashboard");
 let taskList = document.getElementById("main-content");
+let dashID = document.getElementById("")
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:3000/tasks")
@@ -42,12 +43,7 @@ function addSubmittedTask(event){
   .then(json => {
     descriptionsList.innerHTML += taskButton(json)
   })
-  .then(() => {
-    let allButtons = document.querySelectorAll('.mainlist');
-    allButtons.forEach(function(button){
-      button.addEventListener("click", openTaskDashboard);
-    })
-  })
+  .then(taskButtonsList)
   .catch(error => console.log(error.message));
 };
 
@@ -60,9 +56,9 @@ const openTaskDashboard = (event) => {
   {
     taskList.className = "openSelection";
     dashboard.className = "gui";
-    createDashboard(event.currentTarget.id);
+    showDashboard(event.currentTarget.id);
   }
-  else
+  else if (event.currentTarget.id !== taskDashboard.firstChild.className)
   {
     taskList.className = "selection";
     dashboard.className = "hidden";
@@ -70,18 +66,41 @@ const openTaskDashboard = (event) => {
 
 };
 
-const createDashboard = (id) => {
+const showDashboard = (id) => {
   return fetch(`http://localhost:3000/tasks/${id}`)
   .then(resp => resp.json())
   .then(json => {
-    document.querySelector("h1#dashtitle").innerHTML = `TASK: ${json.description}`;
-    document.querySelector("div#details").innerHTML = `${json.details}`;
-    document.querySelector("div#location").innerHTML = `${json.location}`;
-    document.querySelector("div#reminder").innerHTML = `${json.reminder}`;
+    createDashboard(json);
   }
   )
 };
 
+const createDashboard = (task) => { //clean up this section?
+  document.querySelector("h1#dashtitle").innerHTML = `TASK: ${task.description}`;
+  document.querySelector("div#details").innerHTML = `${task.details}`;
+  document.querySelector("div#location").innerHTML = `${task.location}`;
+  document.querySelector("div#reminder").innerHTML = `${task.reminder}`;
+  dashboard.addEventListener("click", editDashboard);
+};
+
+const taskButtonsList = () => {
+  let allButtons = document.querySelectorAll('.mainlist');
+  allButtons.forEach(function(button){
+    button.addEventListener("click", openTaskDashboard);
+  })
+}
+
+const editDashBoard = () => {
+  if (event.target.id === "details")
+  {
+    
+  }
+  else if (event.target.id === "location")
+  {
+
+  }
+  else if (event.target.id === "reminder")
+}
 // add edit button to dashboard
 // add delete button to dashboard
 // const createTask = () => {

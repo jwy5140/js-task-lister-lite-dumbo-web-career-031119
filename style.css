@@ -28,8 +28,7 @@ body {
   margin-top: 20px;
   font-weight: bold;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%); 
+  margin-left: 37.5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,16 +37,17 @@ body {
   padding: 18px 20px 18px 20px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
+  transition: 2s;
 }
 
 .openSelection {
   height: 25%;
   width: 25%;
+  float: left;
   margin-top: 20px;
   font-weight: bold;
   position: relative;
   display: flex;
-  float:left;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -55,6 +55,7 @@ body {
   padding: 18px 20px 18px 20px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
+  transition:2s;
 }
 
 #descriptionsList{
@@ -109,23 +110,40 @@ body {
 }
 
 .gui {
-  min-height: 70%;
+  min-height: 75%;
   min-width: 70%;
-  position: relative;
-  background-color: rgb(41, 215, 238);
+  position: absolute;
   float: right;
+  background-color: rgb(41, 215, 238);
+  margin-left: 27.5%;
   margin-top: 20px;
   font-weight: bold;
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.3);
-  padding: 18px 20px 18px 20px;
+  padding: 18px 15px 18px 15px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
+  opacity: 100;
+  transition: 3s;
+}
+
+#dashboard div{
+  min-height: 30%;
+  min-width: 60%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  box-shadow: 2px 5px 5px #333;
+  padding: 20px 40px;
+  background-color: rgb(41, 215, 238);
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 .clearfix:after {
