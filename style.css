@@ -22,6 +22,23 @@ body {
   box-shadow: 2px 5px 5px #333;
 }
 
+.roygbiv {
+  animation: wheelHueColor 20s infinite;  
+}
+
+@keyframes wheelHueColor {
+  from, to { color: rgb(236,100,75); }
+  10%      { color: rgb(219,10,91); }
+  20%      { color: rgb(174,168,211); }
+  30%      { color: rgb(227, 133, 89); }
+  40%      { color: rgb(66, 37, 169); }
+  50%      { color: rgb(165, 45, 201); }
+  60%      { color: rgb(160, 22, 75); }
+  70%      { color: rgb(233,212,96); }
+  80%      { color: rgb(243,156,18); }
+  90%      { color: rgb(236,240,241); }
+}
+
 .selection {
   height: 25%;
   width: 25%;
@@ -37,7 +54,7 @@ body {
   padding: 18px 20px 18px 20px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
-  transition: 2s;
+  transition: 1.5s;
 }
 
 .openSelection {
@@ -55,7 +72,7 @@ body {
   padding: 18px 20px 18px 20px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
-  transition:2s;
+  transition: 1.5s;
 }
 
 #descriptionsList{
@@ -128,18 +145,44 @@ body {
   transition: 3s;
 }
 
-#dashboard div{
+#dashboard button{
   min-height: 30%;
-  min-width: 60%;
+  min-width: 100%;
+  font-size: 20px;
   position: relative;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   box-shadow: 2px 5px 5px #333;
-  padding: 20px 40px;
+  padding: 5% 40px;
   background-color: rgb(41, 215, 238);
+  box-shadow: 2px 9px 5px #333;
+}
+
+#dashboard div{
+  min-height: 100%;
+  min-width: 100%;
+  font-size: 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  box-shadow: 2px 5px 5px #333;
+  background-color: rgb(41, 215, 238);
+  box-shadow: 2px 9px 5px #333;
+}
+
+#dashboard button:hover{
+  background-color: rgb(25, 157, 167);
+}
+
+#dashboard button:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .hidden {
